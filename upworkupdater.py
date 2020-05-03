@@ -1,0 +1,18 @@
+import os
+import time
+os.system('rm -Rf /usr/share/Upwork')
+print("Deleting /usr/share/Upwork...")
+time.sleep(2)
+print("Done Deleting...")
+time.sleep(2)
+print("Preparing to extract .deb contents..")
+os.system('ar p upwork_*.deb data.tar.xz | tar xJ')
+time.sleep(3)
+print("Done Extracting...")
+time.sleep(2)
+print("Replacing Upwork folder in /usr/share with the new one from the extracted .deb...")
+os.system('cd opt/ && mv Upwork/ /usr/share')
+time.sleep(2)
+print("Done Replacing...")
+time.sleep(2)
+print("Update Completed")
